@@ -34,7 +34,20 @@ create table account_id(
   foreign key(interest_savings_rate) references interest_savings_rate(id)
 );
 insert into account_id values
-(1,1000,1,1,1)
+(1,1000,1,1,1);
+create table customers_table(
+  id int not null primary key,
+  first_name varchar(25) not null,
+  last_name varchar(25) not null, 
+  address varchar(25) not null,
+  contact varchar(25) not null, 
+  identity_proof varchar(25) not null,
+  account_id int not null,
+  foreign key(account_id) references account_id(id)
+);
+insert into customers_table values
+(1,'Vijay','Kumar','Delhi',23532532,'[PAN_CARD, AADHAR_CARD]',1);
+
 
 
 
