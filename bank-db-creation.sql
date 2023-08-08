@@ -23,5 +23,18 @@ insert into interest_savings_rate values
 (1, 7),
 (2, 4.5),
 (3,10);
+create table account_id(
+  id int not null primary key,
+  current_balance varchar(25) not null, 
+  account_type_id int not null,
+  account_status_id int not null,
+  interest_savings_rate int not null,
+  foreign key(account_type_id) references account_type(id),
+  foreign key(account_status_id) references account_status_type(id),
+  foreign key(interest_savings_rate) references interest_savings_rate(id)
+);
+insert into account_id values
+(1,1000,1,1,1)
+
 
 
